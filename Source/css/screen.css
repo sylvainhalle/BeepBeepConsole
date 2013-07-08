@@ -1,0 +1,394 @@
+@import url(http://fonts.googleapis.com/css?family=Acme);
+@import url(http://fonts.googleapis.com/css?family=Numans);
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: white;
+  font-family: Numans, sans-serif;
+  font-size: 10pt;
+}
+
+h1 {
+  font-family: Numans, sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+h2 {
+  font-family: 'Acme', sans-serif;
+  font-weight: normal;
+  font-size: 28px;
+}
+
+#header {
+  background: url('img/nw.png') #e77919 top left no-repeat;
+  height: 86px;
+  width: 100%;
+  position: relative;
+}
+
+.yellow-border {
+  width: 100%;
+  height: 4px;
+  border-top: solid 1px #820;
+  border-bottom: solid 1px #820;
+  background: #e42;
+}
+
+#status-light {
+  background: url('img/signal-grey.png') top left no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+#status-light-inside {
+  background: url('img/signal-green.png') top left no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+#table-wrapper {
+  margin: 10px;
+  padding: 10px;
+}
+
+#inside {
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+table#monitor-list {
+  width: 100%;
+  border: solid 1px darkgrey;
+  border-radius: 6px;
+  border-top-right-radius: 0px;
+}
+
+#monitor-list th {
+  background: #331111;
+  color: white;
+}
+
+#monitor-list tr {
+  font-family: Numans, sans-serif;
+  padding: 8px;
+}
+
+#monitor-list  tr.odd {
+  background-color: #ffe8e8;
+}
+
+#monitor-list  tr.odd:hover {
+  background-color: #f0f0e8;
+}
+
+#monitor-list  tr.even:hover {
+  background-color: #f0f0e8;
+}
+
+#monitor-list td {
+  margin: 0;
+  padding: 8px;
+  border: none;
+}
+
+#monitor-list .description {
+  font-size: 75%;
+  font-style: italic;
+  color: #444;
+}
+
+#btn-refresh {
+  padding-left: 32px;
+  height: 32px;
+  background: url('img/Reset.ico') top left no-repeat;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#btn-autopoll {
+  padding-left: 32px;
+  height: 32px;
+  background: url('img/Play.ico') top left no-repeat;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#btn-autopoll.btn-autopoll-started {
+  background: url('img/Pause.ico') top left no-repeat;
+}
+
+.btn-reset-monitor {
+  background: url('img/Recycle.ico') top left no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.btn-delete-monitor {
+  background: url('img/Delete.ico') top left no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.text-only {
+  display: none;
+}
+
+tr.verdict-true {
+  /*background: green;*/
+}
+
+td.verdict-true {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('img/true.svg');
+}
+
+td.verdict-false {
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('img/false.svg');
+}
+
+td.verdict-inconclusive {
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('img/inconclusive.svg');
+}
+
+#monitor-list td.monitor-contents {
+  padding-left: 32px;
+}
+
+#monitor-list td.icon {
+  width: 40px;
+}
+
+tr.verdict-false {
+  /*background: red;*/
+}
+
+tr.verdict-inconclusive {
+  /*background: white;*/
+}
+
+/* Formatting for LTL-FO+ formulae */
+
+.ltlfo-and, .ltlfo-or, .ltlfo-xor, .ltlfo-rarr {
+  color: green;
+}
+
+.ltlfo-x, .ltlfo-g, .ltlfo-f, .ltlfo-u {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.ltlfo-var {
+  color: darkgreen;
+  font-style: italic;
+}
+
+.ltlfo-path {
+  color: maroon;
+  font-family: monospace;
+}
+
+.ltlfo-paren {
+  color: darkgrey;
+}
+
+.ltlfo-block {
+  padding: 2px;
+}
+
+.ltlfo-outline-element {
+  outline: 1px solid #c00;
+  background: #ffc;
+}
+
+.ltlfo-outline-element-clicked {
+  outline: 1px solid #0c0;
+}
+
+.ltlfo-outline-element > .ltlfo-paren {
+  color: red;
+}
+
+.clearer {
+  clear: both;
+}
+
+#verytop-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: yellow;
+}
+
+#verytop-menu li:first-child {
+  margin-left: 16px;
+}
+
+#verytop-menu li {
+  float: left;
+  display: block;
+  margin: 0;
+  margin-left: 4px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+#verytop-menu li:hover {
+  color: white;
+  background: red;
+}
+
+#status-bar {
+  position: fixed;
+  bottom: 0px;
+  height: 26px;
+  width: 100%;
+  background: #e77919;
+  line-height: 20px;
+  color: white;
+}
+
+.btn-expand-collapse.expanded {
+  background-position: 0 -210px;
+}
+
+.btn-expand-collapse {
+  background-image: url('img/tool-sprites.gif');
+  width: 15px;
+  height: 15px;
+  background-position: -15px -195px;
+  cursor: pointer;
+  float: left;
+  margin-left: -24px;
+}
+
+.monitor-details {
+  display: none;
+}
+
+#fps-meter {
+  background: url('img/icon_analyze_32.png') top left no-repeat;
+  padding-left: 36px;
+  height: 32px;
+  line-height: 32px;
+  color: darkgreen;
+}
+
+#poll-interval-slider {
+  display: inline-block;
+  width: 200px;
+  margin-left: 10pt;
+  margin-right: 10pt;
+}
+
+#global-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  float: right;
+  border-top: solid 1px darkgrey;
+  border-left: solid 1px darkgrey;
+  border-right: solid 1px darkgrey;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 4px;
+}
+
+#global-menu li {
+  float: left;
+  margin-right: 10px;
+  height: 36px;
+  line-height: 36px;
+  vertical-align: center;
+}
+
+#monitor-connection {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#monitor-connection li {
+  line-height: 32px;
+}
+
+#poll-info {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+#poll-info li {
+  float: left;
+  line-height: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.header-collapse {
+  width: 18px;
+  height: 18px;
+  background: url('img/rt-arrow-circle-orange-Shapes4FREE.png') top left no-repeat;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.header-collapse.expanded {
+  background: url('img/down-arrow-circle-orange-Shapes4FREE.png') top left no-repeat;
+}
+
+#current-monitors-contents, #monitor-connection-contents, #statistics-contents {
+  display: none;
+}
+
+#btn-add-monitor {
+  padding-left: 36px;
+  height: 32px;
+  background: url('img/Add.ico') top left no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#btn-reset-monitors {
+  padding-left: 36px;
+  height: 32px;
+  background: url('img/Recycle.ico') top left no-repeat;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#new-monitor-contents {
+  width: 80%;
+  height: 50px;
+}
+
+#btn-submit-new-monitor, #btn-cancel-new-monitor {
+  display: inline-block;
+}
+
+.toolbar-ltlfo {
+  display: inline-block;
+}
